@@ -10,7 +10,6 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <form method="POST" action="{{ route('roles.store') }}">
-                        @method('PUT')
                         @csrf
                         <div class="mb-5">
                             <label for="name"
