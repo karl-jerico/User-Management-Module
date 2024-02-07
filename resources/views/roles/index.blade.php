@@ -36,7 +36,16 @@
                                     </td>
                                     <td class="px-6 py-4">
                                         <a href="{{ route('roles.edit', $role) }}"
-                                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                            class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Edit</a>
+
+                                        <form method="POST" action="{{ route('roles.destroy', $role)}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" onclick="return confirm('Are you sure?')"
+                                                class="text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">delete</button>
+                                        </form>
+
+
                                     </td>
                                 </tr>
                             @endforeach

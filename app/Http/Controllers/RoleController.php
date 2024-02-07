@@ -30,7 +30,13 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => $request->input('password')
+        ]);
+
+        return redirect()->route('roles.index');
     }
 
     /**
@@ -70,6 +76,8 @@ class RoleController extends Controller
      */
     public function destroy(User $role)
     {
-        //
+        $role->delete();
+
+        return redirect()->route('roles.index');
     }
 }
